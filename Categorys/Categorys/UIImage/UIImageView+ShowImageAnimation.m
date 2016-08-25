@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 
 static const char isSetImageFormSDwebImageKey;
+static const char cancelAnimationKeyKey;
 
 @implementation UIImageView (ShowImageAnimation)
 
@@ -69,9 +70,8 @@ static const char isSetImageFormSDwebImageKey;
 
 #pragma mark swizzledSel
 - (void)HLJsetImage:(UIImage *)image {
-    [self HLJsetImage:image];
     
-    if (self.isSetImageFormSDwebImage) {
+    if ([self isSetImageFormSDwebImage] && !self.cancelImageAnimation) {
         if (!self.maskView) {
             UIView * tempView = [UIView new];
             tempView.backgroundColor = [UIColor lightGrayColor];
@@ -86,12 +86,9 @@ static const char isSetImageFormSDwebImageKey;
             self.maskView.alpha = 1;
         } completion:^(BOOL finished) {
         }];
-//        CATransition *transition = [CATransition animation];
-//        transition.duration = 1;
-//        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-//        transition.type = kCATransitionFade;
-//        [self.maskView.layer addAnimation:transition forKey:@"alphaAnimation"];
     }
+    
+    [self HLJsetImage:image];
 }
 
 - (void)HLJsd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletionBlock)completedBlock {
@@ -107,6 +104,12 @@ static const char isSetImageFormSDwebImageKey;
 }
 - (void)setIsSetImageFormSDwebImage:(BOOL)isSetImageFormSDwebImage {
     objc_setAssociatedObject(self, &isSetImageFormSDwebImageKey, @(isSetImageFormSDwebImage), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (BOOL)cancelImageAnimation {
+    return [objc_getAssociatedObject(self, &cancelAnimationKeyKey) boolValue];
+}
+- (void)setCancelImageAnimation:(BOOL)cancelImageAnimation {
+    objc_setAssociatedObject(self, &cancelAnimationKeyKey, @(cancelImageAnimation), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

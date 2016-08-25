@@ -10,6 +10,7 @@
 
 @interface UIImageView (ShowImageAnimation)
 
-@property (nonatomic, assign) BOOL isSetImageFormSDwebImage;
+// 默认为 NO
+@property (nonatomic, assign) BOOL cancelImageAnimation;
 
 @end
