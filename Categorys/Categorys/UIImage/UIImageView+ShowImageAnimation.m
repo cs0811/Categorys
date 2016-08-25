@@ -71,7 +71,7 @@ static const char cancelAnimationKeyKey;
 #pragma mark swizzledSel
 - (void)HLJsetImage:(UIImage *)image {
     
-    if ([self isSetImageFormSDwebImage] && !self.cancelImageAnimation) {
+    if ([self isSetImageFormSDwebImage] && !self.cancelImageAnimation && !self.image) {
         if (!self.maskView) {
             UIView * tempView = [UIView new];
             tempView.backgroundColor = [UIColor lightGrayColor];
