@@ -11,6 +11,8 @@
 
 #define kTabCount 5
 #define kBadgetViewTagStart 888
+#define kScreenWidth    [UIScreen mainScreen].bounds.size.width
+#define kColorYellow1   [UIColor orangeColor]
 
 @implementation UITabBar (CustomBadge)
 
