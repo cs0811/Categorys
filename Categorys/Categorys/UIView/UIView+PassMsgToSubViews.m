@@ -10,10 +10,16 @@
 
 @implementation UIView (PassMsgToSubViews)
 
-- (void)passMsgToSubViewsWithKey:(NSString *)key info:(NSDictionary *)info {
+- (void)passMsgToSubViewClass:(Class)className key:(NSString *)key info:(NSDictionary *)info {
     for (UIView * view in self.subviews) {
-        if ([view respondsToSelector:@selector(passMsgToSubViewsWithKey:info:)]) {
-            [view passMsgToSubViewsWithKey:key info:info];
+        if ([view respondsToSelector:@selector(passMsgToSubViewClass:key:info:)]) {
+            if (className) {
+                if ([view isKindOfClass:className]) {
+                    [view passMsgToSubViewClass:className key:key info:info];
+                }
+            }else {
+                [view passMsgToSubViewClass:className key:key info:info];
+            }
         }
     }
 }

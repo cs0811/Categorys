@@ -13,10 +13,11 @@
 /**
  *  传递消息 (父视图到子视图)
  *
- *  @param key
- *  @param info
+ *  @param className    需要接受信息的类 (为nil时，默认发向所有类)
+ *  @param key          key
+ *  @param info         info
  *
  */
-- (void)passMsgToSubViewsWithKey:(NSString *)key info:(NSDictionary *)info;
+- (void)passMsgToSubViewClass:(Class)className key:(NSString *)key info:(NSDictionary *)info;
 
 @end
