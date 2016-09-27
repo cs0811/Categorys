@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D40662741D867C3700635AA4 /* UIImageView+LoadImgAfterScrolled.m in Sources */ = {isa = PBXBuildFile; fileRef = D40662731D867C3700635AA4 /* UIImageView+LoadImgAfterScrolled.m */; };
 		D41A2E421D6E876700208848 /* ALAssetsLibrary+additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D41A2E1F1D6E876700208848 /* ALAssetsLibrary+additions.m */; };
 		D41A2E431D6E876700208848 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = D41A2E211D6E876700208848 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		D41A2E441D6E876700208848 /* NSObject+SwizzMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = D41A2E241D6E876700208848 /* NSObject+SwizzMethod.m */; };
@@ -30,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D40662721D867C3700635AA4 /* UIImageView+LoadImgAfterScrolled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LoadImgAfterScrolled.h"; sourceTree = "<group>"; };
+		D40662731D867C3700635AA4 /* UIImageView+LoadImgAfterScrolled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LoadImgAfterScrolled.m"; sourceTree = "<group>"; };
 		D41A2E1E1D6E876700208848 /* ALAssetsLibrary+additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+additions.h"; sourceTree = "<group>"; };
 		D41A2E1F1D6E876700208848 /* ALAssetsLibrary+additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+additions.m"; sourceTree = "<group>"; };
 		D41A2E201D6E876700208848 /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				D41A2E2B1D6E876700208848 /* UIImage+Compress.m */,
 				D41A2E2C1D6E876700208848 /* UIImageView+ShowImageAnimation.h */,
 				D41A2E2D1D6E876700208848 /* UIImageView+ShowImageAnimation.m */,
+				D40662721D867C3700635AA4 /* UIImageView+LoadImgAfterScrolled.h */,
+				D40662731D867C3700635AA4 /* UIImageView+LoadImgAfterScrolled.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D41A2E491D6E876700208848 /* UITabBar+CustomBadge.m in Sources */,
+				D40662741D867C3700635AA4 /* UIImageView+LoadImgAfterScrolled.m in Sources */,
 				D41A2E451D6E876700208848 /* UIColor+HexColor.m in Sources */,
 				D41A2E481D6E876700208848 /* UIResponder+Router.m in Sources */,
 				D41A2E441D6E876700208848 /* NSObject+SwizzMethod.m in Sources */,
