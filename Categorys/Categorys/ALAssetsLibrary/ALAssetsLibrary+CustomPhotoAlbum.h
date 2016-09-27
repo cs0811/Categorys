@@ -5,7 +5,7 @@
 //  Copyright (c) 2011 Marin Todorov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
 typedef void(^SaveImageCompletion)(NSError* error);
