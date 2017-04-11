@@ -23,6 +23,8 @@
 		17982E541D8DACFD00E4FCA7 /* UIView+PassMsgToSubViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 17982E421D8DACFD00E4FCA7 /* UIView+PassMsgToSubViews.m */; };
 		17982E551D8DACFD00E4FCA7 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 17982E441D8DACFD00E4FCA7 /* UIView+Size.m */; };
 		D40662741D867C3700635AA4 /* UIImageView+LoadImgAfterScrolled.m in Sources */ = {isa = PBXBuildFile; fileRef = D40662731D867C3700635AA4 /* UIImageView+LoadImgAfterScrolled.m */; };
+		D410AF821E9CDCF100C89627 /* UIImageView+starRank.m in Sources */ = {isa = PBXBuildFile; fileRef = D410AF7E1E9CDCF100C89627 /* UIImageView+starRank.m */; };
+		D410AF831E9CDCF100C89627 /* UILabel+CurrentNumberOfLines.m in Sources */ = {isa = PBXBuildFile; fileRef = D410AF811E9CDCF100C89627 /* UILabel+CurrentNumberOfLines.m */; };
 		D41A2E431D6E876700208848 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = D41A2E211D6E876700208848 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		D41A2E441D6E876700208848 /* NSObject+SwizzMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = D41A2E241D6E876700208848 /* NSObject+SwizzMethod.m */; };
 		D41A2E451D6E876700208848 /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D41A2E281D6E876700208848 /* UIColor+HexColor.m */; };
@@ -74,6 +76,10 @@
 		17982E441D8DACFD00E4FCA7 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		D40662721D867C3700635AA4 /* UIImageView+LoadImgAfterScrolled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LoadImgAfterScrolled.h"; sourceTree = "<group>"; };
 		D40662731D867C3700635AA4 /* UIImageView+LoadImgAfterScrolled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LoadImgAfterScrolled.m"; sourceTree = "<group>"; };
+		D410AF7D1E9CDCF100C89627 /* UIImageView+starRank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+starRank.h"; sourceTree = "<group>"; };
+		D410AF7E1E9CDCF100C89627 /* UIImageView+starRank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+starRank.m"; sourceTree = "<group>"; };
+		D410AF801E9CDCF100C89627 /* UILabel+CurrentNumberOfLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CurrentNumberOfLines.h"; sourceTree = "<group>"; };
+		D410AF811E9CDCF100C89627 /* UILabel+CurrentNumberOfLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CurrentNumberOfLines.m"; sourceTree = "<group>"; };
 		D41A2E211D6E876700208848 /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 		D41A2E241D6E876700208848 /* NSObject+SwizzMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SwizzMethod.m"; sourceTree = "<group>"; };
 		D41A2E281D6E876700208848 /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
@@ -112,6 +118,8 @@
 		17982E171D8DACFD00E4FCA7 /* Categorys */ = {
 			isa = PBXGroup;
 			children = (
+				D410AF7C1E9CDCF100C89627 /* UIImageView */,
+				D410AF7F1E9CDCF100C89627 /* UILabel */,
 				17982E181D8DACFD00E4FCA7 /* ALAssetsLibrary */,
 				17982E1D1D8DACFD00E4FCA7 /* NSObject */,
 				17982E221D8DACFD00E4FCA7 /* NSUserDefaults */,
@@ -240,6 +248,24 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		D410AF7C1E9CDCF100C89627 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				D410AF7D1E9CDCF100C89627 /* UIImageView+starRank.h */,
+				D410AF7E1E9CDCF100C89627 /* UIImageView+starRank.m */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		D410AF7F1E9CDCF100C89627 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				D410AF801E9CDCF100C89627 /* UILabel+CurrentNumberOfLines.h */,
+				D410AF811E9CDCF100C89627 /* UILabel+CurrentNumberOfLines.m */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
 		D4CC2A9C1D26446A001B3542 = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +391,8 @@
 				17982E461D8DACFD00E4FCA7 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				17982E4F1D8DACFD00E4FCA7 /* UITabBarItem+Additions.m in Sources */,
 				17982E511D8DACFD00E4FCA7 /* UITextField+additions.m in Sources */,
+				D410AF831E9CDCF100C89627 /* UILabel+CurrentNumberOfLines.m in Sources */,
+				D410AF821E9CDCF100C89627 /* UIImageView+starRank.m in Sources */,
 				17982E521D8DACFD00E4FCA7 /* UITextField+ExtentRange.m in Sources */,
 				17982E4E1D8DACFD00E4FCA7 /* UITabBar+CustomBadge.m in Sources */,
 				17982E501D8DACFD00E4FCA7 /* UITableViewCell+LoadData.m in Sources */,
