@@ -31,39 +31,41 @@ static char kWholeStarImg;
     
     objc_setAssociatedObject(self, &kStarRank, @(starRank), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
-    UIImage * returnImage;
     CGSize size = self.bounds.size;
     
     CGFloat space = self.spaceH;                 // 星星之间间距
     CGFloat width1 = (size.width-space*(self.maxStarCount-1)-self.spaceLeft-self.spaceRight)/self.maxStarCount;        // 星星的宽
     CGFloat width = width1>size.height ? size.height : width1;
     
-    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
-//    CGContextRef contenttext = UIGraphicsGetCurrentContext();
-//    UIGraphicsPushContext(contenttext);
-    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
-    
-    for (int a=0; a<5; a++) {   // 灰色星星
+    dispatch_queue_t starQueue = dispatch_queue_create("createStarImgQueue", DISPATCH_QUEUE_SERIAL);
+    dispatch_async(starQueue, ^{
+        UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+        
         UIImage * baseImage = [UIImage imageNamed:self.grayStarImg];
-        [baseImage drawInRect:CGRectMake(self.spaceLeft+(width+space)*a, (size.height-width)/2, width, width)];
-    }
-    
-    int b=0;
-    for (b=0; b<floorf(starRank); b++) {      // 黄色星星
+        for (int a=0; a<5; a++) {   // 灰色星星
+            [baseImage drawInRect:CGRectMake(self.spaceLeft+(width+space)*a, (size.height-width)/2, width, width)];
+        }
+        
         UIImage * image = [UIImage imageNamed:self.wholeStarImg];
-        [image drawInRect:CGRectMake(self.spaceLeft+(width+space)*b, (size.height-width)/2, width, width)];
-    }
-    
-    if (starRank<ceilf(starRank) && starRank>floorf(starRank)) {        // 半颗星
+        int b=0;
+        for (b=0; b<floorf(starRank); b++) {      // 黄色星星
+            [image drawInRect:CGRectMake(self.spaceLeft+(width+space)*b, (size.height-width)/2, width, width)];
+        }
+        
         UIImage * imageHalf = [UIImage imageNamed:self.halfStarImg];
-        [imageHalf drawInRect:CGRectMake(self.spaceLeft+(width+space)*b, (size.height-width)/2, width, width)];
-    }
-    
-    returnImage = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsPopContext();
-    UIGraphicsEndImageContext();
-    
-    self.image = returnImage;
+        if (imageHalf) {
+            if (starRank<ceilf(starRank) && starRank>floorf(starRank)) {        // 半颗星
+                [imageHalf drawInRect:CGRectMake(self.spaceLeft+(width+space)*b, (size.height-width)/2, width, width)];
+            }
+        }
+        
+        UIImage * returnImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.image = returnImage;
+        });
+    });
 }
 
 #pragma mark getter
